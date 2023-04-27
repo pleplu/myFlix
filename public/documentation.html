@@ -10,9 +10,105 @@
 
   <body>
     <h1>This is the DOCUMENTATION for myFlix</h1>
+    
     <p>Hello, World! This is an application that will let you sort through different genres of movies <br>
         and directors, and let you save your favorite movies to your account.
     </p>
-  </body>
 
+    <table>
+      <thead>
+        <tr>
+          <th>Business Logic</th>
+          <th>URL</th>
+          <th>HTTP Method</th>
+          <th>Query Parameters</th>
+          <th>Request Body Data Format</th>
+          <th>Response Body Data Format</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Allows a user to be created</td>
+          <td>/users</td>
+          <td>POST</td>
+          <td>None</td>
+          <td>A JSON object of the new user, structured like: {"Username": "", "id": "", "favoriteMovie": ""}</td>
+          <td>A JSON object of the new user added, structured like: {"Username": "", "id": "", "favoriteMovie": ""}</td>
+        </tr>
+
+        <tr>
+          <td>Allows users to change their username</td>
+          <td>/users/:id</td>
+          <td>PUT</td>
+          <td>:id</td>
+          <td>None</td>
+          <td>A JSON object of the user</td>
+        </tr>
+
+        <tr>
+          <td>Allows users to add a movie to their favorites</td>
+          <td>/users/:id/:movieTitle</td>
+          <td>POST</td>
+          <td>:id, :movieTitle</td>
+          <td>None</td>
+          <td>Text confirming the movie has been added to the user's list</td>
+        </tr>
+
+        <tr>
+          <td>Allows users to remove a movie from their favorites</td>
+          <td>/users/:id/:movieTitle</td>
+          <td>DELETE</td>
+          <td>:id, :movieTitle</td>
+          <td>None</td>
+          <td>Text confirming the movie has been removed from the user's list</td>
+        </tr>
+
+        <tr>
+          <td>Allows a user to be deleted</td>
+          <td>/users/:id</td>
+          <td>DELETE</td>
+          <td>:id</td>
+          <td>None</td>
+          <td>Text confirming the user has been deleted</td>
+        </tr>
+
+        <tr>
+          <td>Returns a list of all movies</td>
+          <td>/movies</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>A JSON object of all the movies</td>
+        </tr>
+
+        <tr>
+          <td>Returns data about single movie by title</td>
+          <td>/movies/:title</td>
+          <td>GET</td>
+          <td>:title</td>
+          <td>None</td>
+          <td>A JSON object of a single movie</td>
+        </tr>
+
+        <tr>
+          <td>Returns data about a genre by name</td>
+          <td>/movies/genres/:genreName</td>
+          <td>GET</td>
+          <td>:genreName</td>
+          <td>None</td>
+          <td>A JSON object of a specific genre</td>
+        </tr>
+
+        <tr>
+          <td>Returns data about a director by name</td>
+          <td>/movies/directors/:name</td>
+          <td>GET</td>
+          <td>:directorName</td>
+          <td>None</td>
+          <td>A JSON object of a specific director</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>
