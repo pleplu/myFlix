@@ -33,44 +33,8 @@
           <td>/users</td>
           <td>POST</td>
           <td>None</td>
-          <td>A JSON object of the new user, structured like: {"Username": "", "id": "", "favoriteMovie": ""}</td>
-          <td>A JSON object of the new user added, structured like: {"Username": "", "id": "", "favoriteMovie": ""}</td>
-        </tr>
-
-        <tr>
-          <td>Allows users to change their username</td>
-          <td>/users/:id</td>
-          <td>PUT</td>
-          <td>:id</td>
-          <td>None</td>
-          <td>A JSON object of the user</td>
-        </tr>
-
-        <tr>
-          <td>Allows users to add a movie to their favorites</td>
-          <td>/users/:id/:movieTitle</td>
-          <td>POST</td>
-          <td>:id, :movieTitle</td>
-          <td>None</td>
-          <td>Text confirming the movie has been added to the user's list</td>
-        </tr>
-
-        <tr>
-          <td>Allows users to remove a movie from their favorites</td>
-          <td>/users/:id/:movieTitle</td>
-          <td>DELETE</td>
-          <td>:id, :movieTitle</td>
-          <td>None</td>
-          <td>Text confirming the movie has been removed from the user's list</td>
-        </tr>
-
-        <tr>
-          <td>Allows a user to be deleted</td>
-          <td>/users/:id</td>
-          <td>DELETE</td>
-          <td>:id</td>
-          <td>None</td>
-          <td>Text confirming the user has been deleted</td>
+          <td>A JSON object of the new user, structured like: {"Username": "", "Password": "", "Email": "", "Birthday": "0000-00-00"}</td>
+          <td>A JSON object of the new user, structured like: {"Username": "", "Password": "", "Email": "", "Birthday": "0000-00-00"}</td>
         </tr>
 
         <tr>
@@ -84,29 +48,83 @@
 
         <tr>
           <td>Returns data about single movie by title</td>
-          <td>/movies/:title</td>
+          <td>/movies/:Title</td>
           <td>GET</td>
-          <td>:title</td>
+          <td>:Title</td>
           <td>None</td>
-          <td>A JSON object of a single movie</td>
+          <td>A JSON object a specific movie</td>
         </tr>
 
         <tr>
           <td>Returns data about a genre by name</td>
-          <td>/movies/genres/:genreName</td>
+          <td>/movies/genres/:Name</td>
           <td>GET</td>
-          <td>:genreName</td>
+          <td>:Name</td>
           <td>None</td>
           <td>A JSON object of a specific genre</td>
         </tr>
 
         <tr>
           <td>Returns data about a director by name</td>
-          <td>/movies/directors/:name</td>
+          <td>/movies/directors/:Name</td>
           <td>GET</td>
-          <td>:directorName</td>
+          <td>:Name</td>
           <td>None</td>
           <td>A JSON object of a specific director</td>
+        </tr>
+
+        <tr>
+          <td>Returns a list of all users</td>
+          <td>/users</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>A JSON object of all the users</td>
+        </tr>
+
+        <tr>
+          <td>Returns a list of a single user by username</td>
+          <td>/users/:Username</td>
+          <td>GET</td>
+          <td>:Username</td>
+          <td>None</td>
+          <td>A JSON object of the specfic user</td>
+        </tr>
+
+        <tr>
+          <td>Allows users to change their information</td>
+          <td>/users/:Username</td>
+          <td>PUT</td>
+          <td>:id</td>
+          <td>A JSON object of the new user, structured like: {"Username": "", "Password": "", "Email": "", "Birthday": "0000-00-00"}</td>
+          <td>A JSON object of the new user, structured like: {"Username": "", "Password": "", "Email": "", "Birthday": "0000-00-00"}</td>
+        </tr>
+
+        <tr>
+          <td>Allows users to add a movie to their favorites</td>
+          <td>/users/:Username/movies/:MovieID</td>
+          <td>POST</td>
+          <td>:Username, :MovieID</td>
+          <td>None</td>
+          <td>A JSON of the user</td>
+        </tr>
+
+        <tr>
+          <td>Allows users to remove a movie from their favorites</td>
+          <td>/users/:Username/movies/:MovieID</td>
+          <td>DELETE</td>
+          <td>:Username, :MovieID</td>
+          <td>None</td>
+          <td>Text confirming the movie has been removed from the user's list</td>
+        </tr>
+
+        <tr>
+          <td>Allows a user to be deleted</td>
+          <td>/users/:Username</td>
+          <td>DELETE</td>
+          <td>:Username</td>
+          <td>None</td>
+          <td>Text confirming the user has been deleted</td>
         </tr>
       </tbody>
     </table>
