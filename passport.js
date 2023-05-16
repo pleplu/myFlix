@@ -13,10 +13,13 @@ passport.use(new LocalStrategy({
 }, (username, password, callback) => {
   console.log(username + '  ' + password);
   Users.findOne({ Username: username }).then((user) => {
-    console.log('finished');
-    return callback(null, user)
-    
-  }).catch((error) => {
+    if (!user) {
+      console.log('Incorrect username');
+      return callback(null, false, {message: 'Incorrect username or password.'});
+    } else {
+      console.log('finished');
+      return callback(null, user);
+    }}).catch((error) => {
     console.log('Error' + error)
     return callback(error)
   });

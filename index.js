@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let auth = require('./auth')(app);
 const passport = require('passport');
-let pass = require('./passport');
+require('./passport');
 
 let logger = (req, res, next) => {
     console.log(req.url);
