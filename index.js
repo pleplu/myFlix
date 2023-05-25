@@ -26,7 +26,7 @@ app.use(morgan('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let allowedOrigins = ['*'];
+let allowedOrigins = ['https://my-flix-8675.herokuapp.com', 'http://localhost:8080'];
 app.use(cors({
   origin: (origin, callback) => {
     if(!origin) return callback(null, true);
