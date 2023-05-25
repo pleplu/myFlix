@@ -12,10 +12,15 @@ const Models = require('./models');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-mongoose.connect('mongodb://0.0.0.0:27017/cfDB', { 
+mongoose.connect(process.env.CONNECTION_URI, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
 });
+
+// mongoose.connect('mongodb://0.0.0.0:27017/cfDB', { 
+//     useNewUrlParser: true, 
+//     useUnifiedTopology: true 
+// });
 
 app.use(morgan('common'));
 app.use(bodyParser.json());
