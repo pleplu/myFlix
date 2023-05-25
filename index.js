@@ -12,7 +12,7 @@ const Models = require('./models');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-mongoose.connect(process.env.CONNECTION_URI, { 
+mongoose.connect('mongodb+srv://pleplu01:5237@myflixdb.0qijrgg.mongodb.net/?retryWrites=true&w=majority', { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
 });
