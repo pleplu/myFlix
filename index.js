@@ -12,7 +12,7 @@ const Models = require('./models');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-mongoose.connect('mongodb+srv://pleplu01:5237@myflixdb.0qijrgg.mongodb.net/myFlixDB?retryWrites=true&w=majority', { 
+mongoose.connect(process.env.CONNECTION_URI, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
 });
@@ -94,7 +94,7 @@ app.post('/users', [
 });
 
 // RETURN A LIST OF MOVIES
-app.get('/movies',(req, res) => {
+app.get('/movies', (req, res) => {
     Movies.find().then((movies) => {
         res.status(201).json(movies);
       }).catch((err) => {
