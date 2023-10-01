@@ -7,6 +7,11 @@ let Users = Models.User,
 JWTStrategy = passportJWT.Strategy,
 ExtractJWT = passportJWT.ExtractJwt;
 
+/**
+ * Determines if user attempting to login is valid
+ * @param user.Username 
+ * @param user.Password
+ */
 passport.use(new LocalStrategy({
   usernameField: 'Username',
   passwordField: 'Password'
