@@ -1,5 +1,7 @@
 This repository hosts the code and documentation for my myFlix project's API. 
 
+The data that this application uses is stored using MongoDB.
+
 https://github.com/pleplu/myFlix/blob/main/public/documentation.html this link will direct you to the documentation file which contains all the information on the various API endpoints.
 
 This project was built using an Express framework using these dependencies: 
